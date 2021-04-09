@@ -17,8 +17,4 @@ export class AppComponent {
     this.delete = true;
   }
 
-  
-  ngOnDestroy(){
-    console.log("this is ngDestroy")
-  }
 }
