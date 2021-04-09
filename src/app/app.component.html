@@ -1,0 +1,6 @@
+<input type="text" #text>
+<button (click)="onClick(text.value)">Submit</button>
+<button (click)= "onDelete()">Delete</button>
+<app-child *ngIf="delete == false" [inputData]='data'>
+  <p>lorem adfadfa data: {{data}}</p>
+</app-child>
