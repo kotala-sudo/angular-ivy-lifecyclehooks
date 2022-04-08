@@ -1,49 +1,60 @@
-import { 
-  Component, 
-  OnInit, 
+import {
+  Component,
+  OnInit,
   Input,
   OnChanges,
   OnDestroy,
   AfterContentInit,
   AfterViewInit,
-  AfterContentChecked
-   } from '@angular/core';
+  AfterContentChecked,
+} from '@angular/core';
 
 @Component({
   selector: 'app-child',
-  templateUrl: './child.component.html',
-  styleUrls: ['./child.component.css']
+  template: `
+              <ng-content></ng-content>
+            `
 })
-export class ChildComponent implements OnInit, OnChanges,OnDestroy, AfterContentInit, AfterViewInit, AfterContentChecked {
-
-@Input() inputData: number;
+export class ChildComponent
+  implements
+    OnInit,
+    OnChanges,
+    OnDestroy,
+    AfterContentInit,
+    AfterViewInit,
+    AfterContentChecked
+{
+  @Input() inputData: number;
 
   constructor() {
-    console.log("this is constructor: " + this.inputData)
-   }
+    console.log('this is constructor: ' + this.inputData);
+  }
 
   ngOnInit() {
-    console.log("this is ngOnInit: " + this.inputData)
+    console.log('this is ngOnInit: ' + this.inputData);
   }
 
-  ngOnChanges(){
-    console.log("this is ngOnChanges: " + this.inputData)
+  ngDoCheck() {
+    console.log('this is ngDoCheck');
   }
 
-  ngOnDestroy(){
-    console.log("this is ngDestroy")
+  ngOnChanges() {
+    console.log('this is ngOnChanges: ' + this.inputData);
   }
 
-  ngAfterContentInit(){
-    console.log("After content projection");
+  ngOnDestroy() {
+    console.log('this is ngDestroy');
   }
 
-  ngAfterViewInit(){
-    console.log("After view has been full initialized")
+  ngAfterContentInit() {
+    console.log('After content projection');
   }
 
-  ngAfterContentChecked(){
-    console.log("After Content Checked")
+  ngAfterViewInit() {
+    console.log('After view has been full initialized');
   }
 
+  ngAfterContentChecked() {
+    console.log('After Content Checked');
+  }
 }

@@ -2,6 +2,6 @@
 <input type="text" #text />
 <button (click)="onClick(text.value)">Submit</button>
 <button (click)="onDelete()">Delete</button>
-<app-child *ngIf="delete == false" [inputData]="data">
+<app-child *ngIf="!delete" [inputData]="data">
   <p>Data: {{data}}</p>
 </app-child>
