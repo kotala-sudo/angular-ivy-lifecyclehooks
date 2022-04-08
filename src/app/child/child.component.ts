@@ -7,6 +7,7 @@ import {
   AfterContentInit,
   AfterViewInit,
   AfterContentChecked,
+  AfterViewChecked,
 } from '@angular/core';
 
 @Component({
@@ -21,8 +22,9 @@ export class ChildComponent
     OnChanges,
     OnDestroy,
     AfterContentInit,
+    AfterContentChecked,
     AfterViewInit,
-    AfterContentChecked
+    AfterViewChecked
 {
   @Input() inputData: number;
 
@@ -47,14 +49,18 @@ export class ChildComponent
   }
 
   ngAfterContentInit() {
-    console.log('After content projection');
-  }
-
-  ngAfterViewInit() {
-    console.log('After view has been full initialized');
+    console.log('this is ngAfterContentInit which is called after ng-content projection');
   }
 
   ngAfterContentChecked() {
-    console.log('After Content Checked');
+    console.log('this is ngAfterContentChecked');
+  }
+
+  ngAfterViewInit() {
+    console.log('this is ngAfterViewInt called after the component has been full initialized');
+  }
+
+  ngAfterViewChecked(){
+    console.log('this is ngAfterViewChecked');
   }
 }

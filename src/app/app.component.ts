@@ -10,8 +10,7 @@ import { Component, VERSION } from '@angular/core';
           <app-child *ngIf="!delete" [inputData]="data">
               <p>Data: {{data}}</p>
           </app-child>
-            `,
-  styleUrls: ['./app.component.css'],
+            `
 })
 export class AppComponent {
   data: number = 0;

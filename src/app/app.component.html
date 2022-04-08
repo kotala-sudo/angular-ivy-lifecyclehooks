@@ -1,7 +1,0 @@
-<h3>Enter a number:</h3>
-<input type="text" #text />
-<button (click)="onClick(text.value)">Submit</button>
-<button (click)="onDelete()">Delete</button>
-<app-child *ngIf="!delete" [inputData]="data">
-  <p>Data: {{data}}</p>
-</app-child>
